@@ -1,6 +1,582 @@
+/* --- Fonts --- */
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&display=swap");
+
+/* --- پایه --- */
+:root {
+  --color-primary: #d47311;
+  --color-background-light: #f8f7f6;
+  --color-background-dark: #221910;
+  --color-default: #a3a3a3;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-500: #6b7280;
+  --color-neutral-700: #4a4a4a;
+  --color-neutral-800: #333333;
+  --color-neutral-900: #111111;
+}
+
+html {
+  font-family: "Work Sans", sans-serif;
+  background-color: var(--color-background-light);
+  color: var(--color-neutral-900);
+}
+
+html.dark {
+  background-color: var(--color-background-dark);
+  color: var(--color-neutral-100);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* --- Header --- */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  background-color: rgba(248, 247, 246, 0.8);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 0 16px;
+}
+
+html.dark .app-header {
+  background-color: rgba(34, 25, 16, 0.8);
+}
+
+.header-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+}
+
+.settings-btn {
+  background: transparent;
+  border: none;
+  border-radius: 9999px;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--color-neutral-900);
+  transition: background 0.2s;
+}
+
+html.dark .settings-btn {
+  color: var(--color-neutral-100);
+}
+
+.settings-btn:hover {
+  background-color: rgba(212, 115, 17, 0.1);
+}
+
+html.dark .settings-btn:hover {
+  background-color: rgba(212, 115, 17, 0.2);
+}
+
+/* --- Sections --- */
 .section {
   display: none;
 }
+
 .active-section {
   display: block;
+}
+
+.section-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 16px;
+}
+
+/* --- School Select --- */
+.school-select-wrapper label {
+  display: none;
+}
+
+.school-select-wrapper select {
+  width: 100%;
+  height: 56px;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid rgba(212, 115, 17, 0.5);
+  padding-right: 2.5rem;
+  padding-left: 12px;
+  color: var(--color-neutral-900);
+  background-color: var(--color-background-light);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23d47311' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1.5em 1.5em;
+  appearance: none;
+}
+
+html.dark .school-select-wrapper select {
+  color: var(--color-neutral-100);
+  background-color: var(--color-background-dark);
+}
+
+/* --- Section 1 (Popular Grid) --- */
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 0.75rem;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.product-image:hover {
+  transform: scale(1.05);
+}
+
+.product-info p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.product-info .price {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* Responsive Grid */
+@media (max-width: 600px) {
+  .popular-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+/* --- Footer Nav --- */
+.app-footer {
+  position: sticky;
+  bottom: 10px;
+  /* width: 300px; */
+  margin: 0 auto;
+  border-radius: 35px;
+  height: 80px;
+  border-top: 1px solid rgba(212, 115, 17, 0.2);
+  background-color: rgba(248, 247, 246, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+html.dark .app-footer {
+  background-color: rgba(34, 25, 16, 0.8);
+  border-top: 1px solid rgba(212, 115, 17, 0.2);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.btn-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: var(--color-default);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.btn-section:hover {
+  color: var(--color-primary);
+}
+
+.button-active {
+  color: var(--color-primary);
+}
+
+/* --- Section 2 (Cart) --- */
+.section-2-product-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: rgba(248, 247, 246, 0.5);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
+
+html.dark .section-2-product-item {
+  background-color: rgba(34, 25, 16, 0.5);
+}
+
+.section-2-product-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.section-2-product-image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.5rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.section-2-product-info h3 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #1f1f1f;
+}
+
+html.dark .section-2-product-info h3 {
+  color: #f8f7f6;
+}
+
+.section-2-product-info p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+html.dark .section-2-product-info p {
+  color: #d1d5db;
+}
+
+.section-2-product-counter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+.section-2-product-counter button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  border: none;
+  background-color: rgba(212, 115, 17, 0.2);
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+html.dark .section-2-product-counter button {
+  background-color: rgba(212, 115, 17, 0.3);
+}
+
+.section-2-product-counter span {
+  width: 1rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* --- Checkout & Clear Buttons --- */
+.section-2 footer {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.footer-section--2 {
+  margin-top: 3rem;
+}
+.checkout-btn,
+.clear-cart-btn {
+  width: 100%;
+  height: 48px;
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.checkout-btn {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.checkout-btn:hover {
+  background-color: rgba(212, 115, 17, 0.9);
+}
+
+.clear-cart-btn {
+  background-color: rgba(212, 115, 17, 0.2);
+  color: var(--color-primary);
+}
+
+html.dark .clear-cart-btn {
+  background-color: rgba(212, 115, 17, 0.3);
+}
+
+.clear-cart-btn:hover {
+  background-color: rgba(212, 115, 17, 0.3);
+}
+
+html.dark .clear-cart-btn:hover {
+  background-color: rgba(212, 115, 17, 0.4);
+}
+
+@media (max-width: 600px) {
+  .section-2 footer {
+    margin-top: 2.5rem;
+    gap: 1rem;
+  }
+}
+.section.section--3 {
+  font-family: "Work Sans", sans-serif;
+  background-color: var(--color-background-light);
+  color: var(--color-neutral-900);
+}
+
+html.dark .section.section--3 {
+  background-color: var(--color-background-dark);
+  color: var(--color-neutral-100);
+}
+
+/* 📦 ساختار کلی */
+.section.section--3 .container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* width: 100%; */
+  overflow-x: hidden;
+  padding: 1rem;
+}
+
+main {
+  padding: 1rem;
+}
+
+/* 👤 پروفایل */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.profile-image {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 9999px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profile-info {
+  text-align: center;
+}
+
+.profile-info p.name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.profile-info p.university,
+.profile-info p.joined {
+  color: rgba(0, 0, 0, 0.6);
+  margin: 3px 0 0 0;
+}
+
+html.dark .profile-info p.university,
+html.dark .profile-info p.joined {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* 🧾 بخش‌ها */
+.section-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 0 1rem 0.5rem 1rem;
+}
+
+/* کارت‌ها */
+.card {
+  background-color: var(--color-background-light);
+  border-radius: 0.5rem;
+}
+
+html.dark .card {
+  background-color: rgba(212, 115, 17, 0.05);
+}
+
+/* آیتم‌ها */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 0.5rem;
+  justify-content: space-between;
+}
+
+.item:hover {
+  background-color: rgba(212, 115, 17, 0.05);
+}
+
+.item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.5rem;
+  background-color: rgba(212, 115, 17, 0.1);
+  color: var(--color-primary);
+}
+
+html.dark .item-icon {
+  background-color: rgba(212, 115, 17, 0.2);
+}
+
+.item-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.item-content p.title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.item-content p.sub {
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 3px 0 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  /* width: 100px; some width */
+}
+
+html.dark .item-content p.sub {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-outline {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  background: transparent;
+  cursor: pointer;
+}
+
+.chevron {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: rgba(0, 0, 0, 0.6);
+}
+
+html.dark .chevron {
+  fill: rgba(255, 255, 255, 0.6);
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+/* پروفایل و متن طولانی */
+.profile-info p,
+.item-content p.sub {
+  word-wrap: break-word; /* متن طولانی شکسته شود */
+  overflow-wrap: break-word;
+}
+
+/* محدود کردن عرض School و آیتم‌ها */
+.item-content {
+  flex: 1;
+  min-width: 0; /* اجازه شکستن متن طولانی */
+}
+
+.card .item {
+  flex-wrap: wrap; /* اگر متن طولانی بود خط بعدی */
+}
+
+/* School */
+.item-content p.sub {
+  max-width: 100%; /* محدودیت عرض برای جلوگیری از overflow */
+}
+
+/* بهبود نمایش روی موبایل */
+@media (max-width: 600px) {
+  .profile-info p.name {
+    font-size: 1.25rem;
+  }
+
+  .item-content p.sub {
+    font-size: 0.75rem;
+  }
+}
+
+.item-wapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media only screen and (max-width: 315px) {
+  .app-footer {
+    width: 100%;
+  }
 }

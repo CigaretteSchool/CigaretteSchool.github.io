@@ -1,77 +1,16 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stitch Design</title>
-    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="style/app.css" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              default: '#a3a3a3',
-              primary: '#d47311',
-              'background-light': '#f8f7f6',
-              'background-dark': '#221910',
-            },
-            fontFamily: {
-              display: ['Work Sans'],
-            },
-            borderRadius: {
-              DEFAULT: '0.25rem',
-              lg: '0.5rem',
-              xl: '0.75rem',
-              full: '9999px',
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      .form-select {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23d47311' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
-        background-position: right 0.5rem center;
-        background-repeat: no-repeat;
-        background-size: 1.5em 1.5em;
-        padding-right: 2.5rem;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-      body {
-        min-height: max(884px, 100dvh);
-        /* Add padding to prevent content from being hidden behind sticky header/footer */
-        padding-top: 64px; /* Adjust based on new header height */
-        padding-bottom: 80px; /* Adjust based on footer height */
-      }
-      /* Optional: Hide inactive sections for a single-page app feel */
-      .section:not(.active-section) {
-        display: none;
-      }
-      /* Ensure sticky elements are always on top */
-      .app-header,
-      .app-footer {
-        z-index: 20;
-      }
-    </style>
   </head>
-  <body class="bg-background-light dark:bg-background-dark font-display">
-    <header
-      class="app-header sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm shadow-md"
-    >
-      <div class="flex items-center justify-between h-16 px-4">
-        <div class="text-xl font-black text-primary">Stitch</div>
-        <button
-          class="text-neutral-900 dark:text-neutral-100 p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors"
-          aria-label="Settings"
-        >
+  <body>
+    <header class="app-header">
+      <div class="header-content">
+        <div class="logo">Stitch</div>
+        <button class="settings-btn" aria-label="Settings">
           <svg
             fill="currentColor"
             height="24"
@@ -86,243 +25,312 @@
         </button>
       </div>
     </header>
-    <div class="section--1 section active-section">
-      <div
-        class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden"
-      >
-        <div class="flex-grow">
-          <header class="flex items-center px-4 pt-4">
-            <h1
-              class="flex-1 text-center text-lg font-bold text-neutral-900 dark:text-neutral-100"
-            >
-              Select Your School
-            </h1>
-          </header>
 
-          <main class="p-4">
-            <div class="mb-6">
-              <label class="sr-only" for="school-select"
-                >Select your school</label
-              >
-              <select
-                class="form-select w-full rounded-lg border-2 border-primary/50 bg-background-light dark:bg-background-dark text-neutral-900 dark:text-neutral-100 focus:border-primary focus:ring-primary/50 h-14 text-base font-medium"
-                id="school-select"
-              >
-                <option>Select your school</option>
-                <option>school of Example</option>
-                <option>Another school</option>
-              </select>
-            </div>
-            <h2
-              class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4"
-            >
-              Popular
-            </h2>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="flex flex-col gap-2">
-                <div
-                  class="w-full aspect-square bg-cover bg-center rounded-lg"
-                  style="
-                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPeDr3sXgs7_LpH25JWKi_Imvau06Zgy-qNpaNdKwpPdmEzsaI4jviFXPsUWhhK0LDh57MGHeMlXYxCI4h2FsrRB1Rlzw2nHoGA80gVwPdGZwpfPOZ16PH95zT5v9BnFGmnJuttgiD_sDbMLkirTIiTUe1FolHZx8lPB-odWMYVLOhVx6xM1iKm11PDJsjYHPOInGLTcPtq9k-NYzEwirMotZp-1JmTYRfQzq32qIEmPi0vCRUVjuYPZShLOgAlMLc4ZbECC3dexc');
-                  "
-                ></div>
-                <div>
-                  <p
-                    class="font-semibold text-neutral-800 dark:text-neutral-200"
-                  >
-                    Brand A Red
-                  </p>
-                  <p class="text-primary font-bold">$12.99</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-2">
-                <div
-                  class="w-full aspect-square bg-cover bg-center rounded-lg"
-                  style="
-                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvMxwA1xNug_i70FI0uLXuv2jBy8NF_bjUnLcVmSYnNA2AUZ4LVSQwId_BJ8hcmP5mkwK6m6790b9FO8AWgZjkrWBRUXEuZPbuKyuvDx3s4E6ZyMNLypXN-YBiJ4kihdc6flOOMrDaxtsH5qTE5sUHYZGSuMS9PAHx_FZUunH2aEaMi1fBtOsNQj-FxZo6CAk8JdOuQ9GBtElbF2e09Czv0kY8ytrtfpE4qVq0dnVaDXDvU6Q8lUqDoVmmMN9mRMl7mQ81YFyUuW8');
-                  "
-                ></div>
-                <div>
-                  <p
-                    class="font-semibold text-neutral-800 dark:text-neutral-200"
-                  >
-                    Brand B Blue
-                  </p>
-                  <p class="text-primary font-bold">$11.99</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-2">
-                <div
-                  class="w-full aspect-square bg-cover bg-center rounded-lg"
-                  style="
-                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTzL8m2xrexrFSf4oNGJMULZ_rxGQcpNSV7iXDNKUy3HFxUkJQqFrrHpC_X8yvP-PiyP71n4Yo-PBledTFXEU_j5bXReqqq_M1V127LNcQcNnWpMZ_uomELNL4LV9z8_ClOZZXPfTbisyLm6i9KMKvsYpvsiWCGdmuU6r1BRLX_5ALdlhP5WvwOwbJ3YF6Bh7MONNI8XLoPykBwB8mkwXwOTQuRpejbt5wOZd2LokSwZTe5wg-6j8cNsSkAYBulw89qgkz0n8-Hvk');
-                  "
-                ></div>
-                <div>
-                  <p
-                    class="font-semibold text-neutral-800 dark:text-neutral-200"
-                  >
-                    Brand C Yellow
-                  </p>
-                  <p class="text-primary font-bold">$13.49</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-2">
-                <div
-                  class="w-full aspect-square bg-cover bg-center rounded-lg bg-neutral-300 dark:bg-neutral-700"
-                  style="
-                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXr-TL_-21jOCRu0BVU_TAOXwf7_34me_2h827jYeL8HnUbCoHchSOs4Xl_cbw8m1LpoFi7ekhTRup5KANVrBeAnKbx0ZMc7qCgLL5CDFXy2dbnGQYfZhDo9dMaz2vHUVTIE0xQ00UTmWP-lAET3M_ljia5dnUOiJyVJhbLlx0a9btwzNdEPPZN1XK5xDwhQbv3-UB8hUPnXhbyqOlMBymIUkMgsdlCTMWcnL8fqufuD-xLMY9i-HcJxRBe-tpU3rZNyOTgUrBZxg');
-                  "
-                ></div>
-                <div>
-                  <p
-                    class="font-semibold text-neutral-800 dark:text-neutral-200"
-                  >
-                    Brand D Gold
-                  </p>
-                  <p class="text-primary font-bold">$14.29</p>
-                </div>
+    <div class="section--1 section active-section">
+      <div class="section-content">
+        <header>
+          <h1>Select Your School</h1>
+        </header>
+        <main>
+          <div class="school-select-wrapper">
+            <label for="school-select">Select your school</label>
+            <select id="school-select">
+              <option>Select your school</option>
+              <option>school of Example</option>
+              <option>Another school</option>
+            </select>
+          </div>
+
+          <h2>Popular</h2>
+          <div class="popular-grid">
+            <!-- نمونه محصولات، چهار عدد -->
+            <div class="product-card">
+              <div
+                class="product-image"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPeDr3sXgs7_LpH25JWKi_Imvau06Zgy-qNpaNdKwpPdmEzsaI4jviFXPsUWhhK0LDh57MGHeMlXYxCI4h2FsrRB1Rlzw2nHoGA80gVwPdGZwpfPOZ16PH95zT5v9BnFGmnJuttgiD_sDbMLkirTIiTUe1FolHZx8lPB-odWMYVLOhVx6xM1iKm11PDJsjYHPOInGLTcPtq9k-NYzEwirMotZp-1JmTYRfQzq32qIEmPi0vCRUVjuYPZShLOgAlMLc4ZbECC3dexc');
+                "
+              ></div>
+              <div class="product-info">
+                <p>Brand A Red</p>
+                <p class="price">$12.99</p>
               </div>
             </div>
-          </main>
-        </div>
+
+            <div class="product-card">
+              <div
+                class="product-image"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvMxwA1xNug_i70FI0uLXuv2jBy8NF_bjUnLcVmSYnNA2AUZ4LVSQwId_BJ8hcmP5mkwK6m6790b9FO8AWgZjkrWBRUXEuZPbuKyuvDx3s4E6ZyMNLypXN-YBiJ4kihdc6flOOMrDaxtsH5qTE5sUHYZGSuMS9PAHx_FZUunH2aEaMi1fBtOsNQj-FxZo6CAk8JdOuQ9GBtElbF2e09Czv0kY8ytrtfpE4qVq0dnVaDXDvU6Q8lUqDoVmmMN9mRMl7mQ81YFyUuW8');
+                "
+              ></div>
+              <div class="product-info">
+                <p>Brand B Blue</p>
+                <p class="price">$11.99</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <div
+                class="product-image"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTzL8m2xrexrFSf4oNGJMULZ_rxGQcpNSV7iXDNKUy3HFxUkJQqFrrHpC_X8yvP-PiyP71n4Yo-PBledTFXEU_j5bXReqqq_M1V127LNcQcNnWpMZ_uomELNL4LV9z8_ClOZZXPfTbisyLm6i9KMKvsYpvsiWCGdmuU6r1BRLX_5ALdlhP5WvwOwbJ3YF6Bh7MONNI8XLoPykBwB8mkwXwOTQuRpejbt5wOZd2LokSwZTe5wg-6j8cNsSkAYBulw89qgkz0n8-Hvk');
+                "
+              ></div>
+              <div class="product-info">
+                <p>Brand C Yellow</p>
+                <p class="price">$13.49</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <div
+                class="product-image"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXr-TL_-21jOCRu0BVU_TAOXwf7_34me_2h827jYeL8HnUbCoHchSOs4Xl_cbw8m1LpoFi7ekhTRup5KANVrBeAnKbx0ZMc7qCgLL5CDFXy2dbnGQYfZhDo9dMaz2vHUVTIE0xQ00UTmWP-lAET3M_ljia5dnUOiJyVJhbLlx0a9btwzNdEPPZN1XK5xDwhQbv3-UB8hUPnXhbyqOlMBymIUkMgsdlCTMWcnL8fqufuD-xLMY9i-HcJxRBe-tpU3rZNyOTgUrBZxg');
+                "
+              ></div>
+              <div class="product-info">
+                <p>Brand D Gold</p>
+                <p class="price">$14.29</p>
+              </div>
+            </div>
+          </div>
+        </main>
       </div>
     </div>
     <div class="section--2 section">
-      <div
-        class="relative flex h-auto min-h-screen w-full flex-col justify-between group/design-root overflow-x-hidden"
-      >
-        <div class="flex-grow">
-          <header
-            class="sticky top-16 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm"
-          ></header>
-          <main class="p-4 space-y-4">
+      <div class="section-content">
+        <header></header>
+        <main>
+          <div class="section-2-product-item">
             <div
-              class="flex items-center gap-4 bg-background-light/50 dark:bg-background-dark/50 p-4 rounded-lg shadow-sm"
-            >
-              <div class="flex-shrink-0">
-                <div
-                  class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16"
-                  style="
-                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKG9FtTl2rQYooP-nRBZ0VFSkiZ8qtGFiFki_sjOQDpYtNAJQPOLGDTPojMyRFiOWw4VN2o6lpF7pYfnfWQnUAWiH5ItX_2TRJbTPP9Cux70EEJGBZ68z1QDWHsZXjlQ76RDlSN2gBN91PzQEkjp2MlRKmUdWGQVxTQ3zjyw29PyQY4uXmtBF7Rob58lutYT8GnG5jaOIKdV4avmmSXf7Ukw7feXbnsT_4kia6fm2zkhCCT_Q1-gZq5bboQZ4cNg8X3q5i848jxsA');
-                  "
-                ></div>
-              </div>
-              <div class="flex-grow">
-                <h3 class="font-bold text-gray-900 dark:text-white">Red</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400">Marlboro</p>
-              </div>
-              <div class="flex items-center gap-3">
-                <button
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20 dark:bg-primary/30 text-primary"
-                >
-                  -
-                </button>
-                <span
-                  class="font-bold w-4 text-center text-gray-900 dark:text-white"
-                  >1</span
-                >
-                <button
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20 dark:bg-primary/30 text-primary"
-                >
-                  +
-                </button>
-              </div>
+              class="section-2-product-image"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKG9FtTl2rQYooP-nRBZ0VFSkiZ8qtGFiFki_sjOQDpYtNAJQPOLGDTPojMyRFiOWw4VN2o6lpF7pYfnfWQnUAWiH5ItX_2TRJbTPP9Cux70EEJGBZ68z1QDWHsZXjlQ76RDlSN2gBN91PzQEkjp2MlRKmUdWGQVxTQ3zjyw29PyQY4uXmtBF7Rob58lutYT8GnG5jaOIKdV4avmmSXf7Ukw7feXbnsT_4kia6fm2zkhCCT_Q1-gZq5bboQZ4cNg8X3q5i848jxsA');
+              "
+            ></div>
+            <div class="section-2-product-info">
+              <h3>Red</h3>
+              <p>Marlboro</p>
             </div>
-            <div
-              class="flex items-center gap-4 bg-background-light/50 dark:bg-background-dark/50 p-4 rounded-lg shadow-sm"
-            >
-              <div class="flex-shrink-0">
-                <div
-                  class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16"
-                  style="
-                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC25r0xvbcWUdxn1YEvKPVeEO7xGzk_6m-Iy5Ejvf88xIh_p3D4eT-EKMSzPV0k2PJuvusrjBn3VG-ZcdEzJNDgEAW5XVhDgz1Kz5VdfqIknNZRY9T_cBv7QiVs-qjLEdVYss-qhk6haeOMqcvlD7dku3yKL9PXV6LcQY0BJTaZcNNJyrucn3eD2CHHXfHlcKE-7rsK4DzhPM20TFX-mBG6buHGAPF8-qnWV1Fk5tmpIsl54gho1qGoWM3b-I0cJ0_uNWW1h6gLSnM');
-                  "
-                ></div>
-              </div>
-              <div class="flex-grow">
-                <h3 class="font-bold text-gray-900 dark:text-white">Blue</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400">Camel</p>
-              </div>
-              <div class="flex items-center gap-3">
-                <button
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20 dark:bg-primary/30 text-primary"
-                >
-                  -
-                </button>
-                <span
-                  class="font-bold w-4 text-center text-gray-900 dark:text-white"
-                  >2</span
-                >
-                <button
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20 dark:bg-primary/30 text-primary"
-                >
-                  +
-                </button>
-              </div>
+            <div class="section-2-product-counter">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
             </div>
-            <div
-              class="flex items-center gap-4 bg-background-light/50 dark:bg-background-dark/50 p-4 rounded-lg shadow-sm"
-            >
-              <div class="flex-shrink-0">
-                <div
-                  class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16"
-                  style="
-                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwIh7f2cxIId7OGdPhP6IL2Ad_3H9bYetghHLsndjZI3Cr2CMmH3aUQ0yhLg3HvqW8taw0v_6rE3Nx_YpjcnwjQY_z1wWHItkj2A7GNcbbIv-fKFmr1x46SDzcWxN0tiiBN7jiaGswC0Frg9-7gw3X31nbzEXaKiq1TbdRBUQ76eejQRR_KRM4e_nMH0bAVnJVEKDVKhnHpMtMv3PVVxn5stHai3aU3T65AUHe0oyMajhILGaYBLAHnka0LWMjs_Ky4p5dUB4Yqj4');
-                  "
-                ></div>
-              </div>
-              <div class="flex-grow">
-                <h3 class="font-bold text-gray-900 dark:text-white">Yellow</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400">
-                  American Spirit
-                </p>
-              </div>
-              <div class="flex items-center gap-3">
-                <button
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20 dark:bg-primary/30 text-primary"
-                >
-                  -
-                </button>
-                <span
-                  class="font-bold w-4 text-center text-gray-900 dark:text-white"
-                  >1</span
-                >
-                <button
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20 dark:bg-primary/30 text-primary"
-                >
-                  +
-                </button>
-              </div>
-            </div>
-          </main>
-        </div>
-        <footer
-          class="sticky bottom-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm"
-        >
-          <div class="flex flex-col gap-3 p-4">
-            <button
-              class="flex w-full items-center justify-center rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:bg-primary/90 transition-colors"
-            >
-              <span class="truncate">Checkout</span>
-            </button>
-            <button
-              class="flex w-full items-center justify-center rounded-lg h-12 px-5 bg-primary/20 dark:bg-primary/30 text-primary text-base font-bold leading-normal tracking-wide hover:bg-primary/30 dark:hover:bg-primary/40 transition-colors"
-            >
-              <span class="truncate">Clear Cart</span>
-            </button>
           </div>
+
+          <div class="section-2-product-item">
+            <div
+              class="section-2-product-image"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC25r0xvbcWUdxn1YEvKPVeEO7xGzk_6m-Iy5Ejvf88xIh_p3D4eT-EKMSzPV0k2PJuvusrjBn3VG-ZcdEzJNDgEAW5XVhDgz1Kz5VdfqIknNZRY9T_cBv7QiVs-qjLEdVYss-qhk6haeOMqcvlD7dku3yKL9PXV6LcQY0BJTaZcNNJyrucn3eD2CHHXfHlcKE-7rsK4DzhPM20TFX-mBG6buHGAPF8-qnWV1Fk5tmpIsl54gho1qGoWM3b-I0cJ0_uNWW1h6gLSnM');
+              "
+            ></div>
+            <div class="section-2-product-info">
+              <h3>Blue</h3>
+              <p>Camel</p>
+            </div>
+            <div class="section-2-product-counter">
+              <button>-</button>
+              <span>2</span>
+              <button>+</button>
+            </div>
+          </div>
+
+          <div class="section-2-product-item">
+            <div
+              class="section-2-product-image"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwIh7f2cxIId7OGdPhP6IL2Ad_3H9bYetghHLsndjZI3Cr2CMmH3aUQ0yhLg3HvqW8taw0v_6rE3Nx_YpjcnwjQY_z1wWHItkj2A7GNcbbIv-fKFmr1x46SDzcWxN0tiiBN7jiaGswC0Frg9-7gw3X31nbzEXaKiq1TbdRBUQ76eejQRR_KRM4e_nMH0bAVnJVEKDVKhnHpMtMv3PVVxn5stHai3aU3T65AUHe0oyMajhILGaYBLAHnka0LWMjs_Ky4p5dUB4Yqj4');
+              "
+            ></div>
+            <div class="section-2-product-info">
+              <h3>Yellow</h3>
+              <p>American Spirit</p>
+            </div>
+            <div class="section-2-product-counter">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+          </div>
+          <div class="section-2-product-item">
+            <div
+              class="section-2-product-image"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwIh7f2cxIId7OGdPhP6IL2Ad_3H9bYetghHLsndjZI3Cr2CMmH3aUQ0yhLg3HvqW8taw0v_6rE3Nx_YpjcnwjQY_z1wWHItkj2A7GNcbbIv-fKFmr1x46SDzcWxN0tiiBN7jiaGswC0Frg9-7gw3X31nbzEXaKiq1TbdRBUQ76eejQRR_KRM4e_nMH0bAVnJVEKDVKhnHpMtMv3PVVxn5stHai3aU3T65AUHe0oyMajhILGaYBLAHnka0LWMjs_Ky4p5dUB4Yqj4');
+              "
+            ></div>
+            <div class="section-2-product-info">
+              <h3>Yellow</h3>
+              <p>American Spirit</p>
+            </div>
+            <div class="section-2-product-counter">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+          </div>
+          <div class="section-2-product-item">
+            <div
+              class="section-2-product-image"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwIh7f2cxIId7OGdPhP6IL2Ad_3H9bYetghHLsndjZI3Cr2CMmH3aUQ0yhLg3HvqW8taw0v_6rE3Nx_YpjcnwjQY_z1wWHItkj2A7GNcbbIv-fKFmr1x46SDzcWxN0tiiBN7jiaGswC0Frg9-7gw3X31nbzEXaKiq1TbdRBUQ76eejQRR_KRM4e_nMH0bAVnJVEKDVKhnHpMtMv3PVVxn5stHai3aU3T65AUHe0oyMajhILGaYBLAHnka0LWMjs_Ky4p5dUB4Yqj4');
+              "
+            ></div>
+            <div class="section-2-product-info">
+              <h3>Yellow</h3>
+              <p>American Spirit</p>
+            </div>
+            <div class="section-2-product-counter">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+          </div>
+          <div class="section-2-product-item">
+            <div
+              class="section-2-product-image"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwIh7f2cxIId7OGdPhP6IL2Ad_3H9bYetghHLsndjZI3Cr2CMmH3aUQ0yhLg3HvqW8taw0v_6rE3Nx_YpjcnwjQY_z1wWHItkj2A7GNcbbIv-fKFmr1x46SDzcWxN0tiiBN7jiaGswC0Frg9-7gw3X31nbzEXaKiq1TbdRBUQ76eejQRR_KRM4e_nMH0bAVnJVEKDVKhnHpMtMv3PVVxn5stHai3aU3T65AUHe0oyMajhILGaYBLAHnka0LWMjs_Ky4p5dUB4Yqj4');
+              "
+            ></div>
+            <div class="section-2-product-info">
+              <h3>Yellow</h3>
+              <p>American Spirit</p>
+            </div>
+            <div class="section-2-product-counter">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+          </div>
+          <div class="section-2-product-item">
+            <div
+              class="section-2-product-image"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwIh7f2cxIId7OGdPhP6IL2Ad_3H9bYetghHLsndjZI3Cr2CMmH3aUQ0yhLg3HvqW8taw0v_6rE3Nx_YpjcnwjQY_z1wWHItkj2A7GNcbbIv-fKFmr1x46SDzcWxN0tiiBN7jiaGswC0Frg9-7gw3X31nbzEXaKiq1TbdRBUQ76eejQRR_KRM4e_nMH0bAVnJVEKDVKhnHpMtMv3PVVxn5stHai3aU3T65AUHe0oyMajhILGaYBLAHnka0LWMjs_Ky4p5dUB4Yqj4');
+              "
+            ></div>
+            <div class="section-2-product-info">
+              <h3>Yellow</h3>
+              <p>American Spirit</p>
+            </div>
+            <div class="section-2-product-counter">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+          </div>
+        </main>
+
+        <footer class="footer-section--2">
+          <button class="checkout-btn">Checkout</button>
+          <button class="clear-cart-btn">Clear Cart</button>
           <div class="h-safe-area-bottom"></div>
         </footer>
       </div>
     </div>
-    <footer
-      class="app-footer sticky bottom-0 border-t border-primary/20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm"
-    >
-      <nav class="flex justify-around items-center h-20 px-4 nav">
+    <div class="section section--3">
+      <div class="container">
+        <main>
+          <div class="profile">
+            <div
+              class="profile-image"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDlYbQhsJyHsbyUbpzlurghl63rWwjenpPtkkebs17fJCWOjxj7uwkksIxTzyUTJkwJHOX5VQVuHVoZ-CTXwMVqVqKHJ6hbTMO_zmMlaH8jz9iMFXP_HozWK_fxvwZBUGq5z3V4iaDGQDJdDI_Y2sqSID0IHiBX_Pzg0Pc6HKziE8AHHoa5gvx1cy-rVqtzTOMND1CQsXsNFTpfmZ_M0PRClWM69zariIVbUtyziEGt5BF3wB_e9iCuQNeBdKDmI0wfpJGVOYGHAGI');
+              "
+            ></div>
+            <div class="profile-info">
+              <p class="name">Ethan Carter</p>
+              <p class="university">University of California, Los Angeles</p>
+              <p class="joined">Joined in 2022</p>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div>
+              <h2 class="section-title">Account</h2>
+              <div class="card">
+                <div class="item">
+                  <div class="item-icon">
+                    <!-- mail icon -->
+                    <svg class="icon" viewBox="0 0 24 24">
+                      <path
+                        d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="item-content">
+                    <p class="title">Email</p>
+                    <p class="sub">ethan.carter@email.com</p>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <div class="item-icon">
+                    <!-- phone icon -->
+                    <svg class="icon" viewBox="0 0 24 24">
+                      <path
+                        d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.55.57 1 1 0 011 1v3.61a1 1 0 01-.89 1 19 19 0 01-8.31-2.84 18.86 18.86 0 01-5.59-5.59A19 19 0 013 5.11 1 1 0 014 4h3.61a1 1 0 011 1 11.36 11.36 0 00.57 3.55 1 1 0 01-.21 1.11z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="item-content">
+                    <p class="title">Phone</p>
+                    <p class="sub">+1 (555) 123-4567</p>
+                  </div>
+                </div>
+
+                <a href="#" class="item">
+                  <div class="item-icon">
+                    <!-- school icon -->
+                    <svg class="icon" viewBox="0 0 24 24">
+                      <path
+                        d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 13L3.74 11.4 12 7l8.26 4.4L12 16z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="item-content">
+                    <p class="title">School</p>
+                    <p class="sub">school of California, Los Angeles</p>
+                  </div>
+                  <button class="btn-outline">Change</button>
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h2 class="section-title">Settings</h2>
+              <div class="card">
+                <a href="#" class="item">
+                  <div class="item-wapper">
+                    <div class="item-icon">
+                      <!-- edit icon -->
+                      <svg class="icon" viewBox="0 0 24 24">
+                        <path
+                          d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1.003 1.003 0 000-1.42l-2.34-2.34a1.003 1.003 0 00-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.82z"
+                        />
+                      </svg>
+                    </div>
+                    <p class="title">Edit Profile</p>
+                  </div>
+                  <!-- chevron icon -->
+                  <svg class="chevron" viewBox="0 0 24 24">
+                    <path d="M9 6l6 6-6 6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <footer class="app-footer">
+      <nav class="nav">
         <button
           data-tab="1"
-          class="flex flex-col items-center gap-1 text-primary btn-section"
+          class="btn-section button-active"
           data-target="section--1"
         >
           <svg
@@ -338,11 +346,7 @@
           </svg>
           <span class="text-xs font-medium">Home</span>
         </button>
-        <button
-          data-tab="2"
-          class="flex flex-col items-center gap-1 text-default hover:text-primary transition-colors btn-section"
-          data-target="section--2"
-        >
+        <button data-tab="2" class="btn-section" data-target="section--2">
           <svg
             fill="currentColor"
             height="28"
@@ -356,11 +360,7 @@
           </svg>
           <span class="text-xs font-medium">Cart</span>
         </button>
-        <button
-          data-tab="3"
-          class="flex flex-col items-center gap-1 text-default hover:text-primary transition-colors btn-section"
-          data-target="section--3"
-        >
+        <button data-tab="3" class="btn-section" data-target="section--3">
           <!--  -->
           <svg
             fill="currentColor"

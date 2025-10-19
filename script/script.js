@@ -28,7 +28,7 @@ window.addEventListener("scroll", function () {
   const scrollTop = window.scrollY; // چقدر اسکرول شده
   const windowHeight = window.innerHeight; // ارتفاع ویوپورت
   const docHeight = document.documentElement.scrollHeight; //‌ ارتفاع کل صفحه
-  if (scrollTop + windowHeight >= docHeight) {
+  if (scrollTop + windowHeight‌ + 10 >= docHeight) {
     appFooter.style.width = "100%";
     appFooter.style.borderRadius = "0";
   } else {

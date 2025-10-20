@@ -23,18 +23,3 @@ tabsContainer.addEventListener("click", function (e) {
 scrollBtn.addEventListener("click", function () {
   window.scrollTo({ top: 1, behavior: "smooth" });
 });
-//  footer
-window.addEventListener("scroll", function () {
-  const scrollTop = window.scrollY; // چقدر اسکرول شده
-  const windowHeight = window.innerHeight; // ارتفاع ویوپورت
-  const docHeight = document.documentElement.scrollHeight; //‌ ارتفاع کل صفحه
-  if (scrollTop + windowHeight + 10 >= docHeight) {
-    appFooter.style.width = "100%";
-    appFooter.style.borderRadius = "0";
-  } else {
-    if (this.window.innerWidth >= 315) {
-      appFooter.style.borderRadius = "35px";
-      appFooter.style.width = "300px";
-    }
-  }
-});

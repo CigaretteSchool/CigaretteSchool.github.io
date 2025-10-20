@@ -205,15 +205,24 @@ html.dark .settings-btn:hover {
   bottom: 10px;
   width: 300px;
   margin: 0 auto;
-  border-radius: 35px;
   height: 80px;
-  border-top: 1px solid rgba(212, 115, 17, 0.2);
-  background-color: rgba(248, 247, 246, 0.8);
-  backdrop-filter: blur(8px);
+  border-radius: 35px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); */
+
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 20;
+  transition: all 350ms ease;
+}
+
+.app-footer:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.097);
 }
 
 html.dark .app-footer {

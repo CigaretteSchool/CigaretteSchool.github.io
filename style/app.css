@@ -103,32 +103,49 @@ html.dark .settings-btn:hover {
   justify-content: flex-start;
   padding: 16px;
 }
-
+.school-select-wrapper {
+  border-radius: 0.5rem;
+  background-color: var(--color-background-dark);
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid rgba(212, 115, 17, 0.5);
+  align-items: center;
+}
 /* --- School Select --- */
 .school-select-wrapper label {
   display: none;
 }
-
-.school-select-wrapper select {
-  width: 100%;
+.school-select-search {
+  margin-right: 0.5rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: #ffffff00;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary);
+  color: var(--color-background-dark);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.school-select-wrapper input {
+  width: 90%;
   height: 56px;
+  outline: none;
   font-size: 1rem;
   border-radius: 0.5rem;
-  border: 2px solid rgba(212, 115, 17, 0.5);
+  border: none;
   padding-right: 2.5rem;
   padding-left: 12px;
   color: var(--color-neutral-900);
-  background-color: var(--color-background-light);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23d47311' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-color: var(--color-background-dark);
   background-repeat: no-repeat;
   background-position: right 0.5rem center;
   background-size: 1.5em 1.5em;
   appearance: none;
-}
-
-html.dark .school-select-wrapper select {
   color: var(--color-neutral-100);
-  background-color: var(--color-background-dark);
 }
 
 /* --- Section 1 (Popular Grid) --- */
@@ -157,7 +174,9 @@ html.dark .school-select-wrapper select {
   background-position: center;
   transition: transform 0.2s ease-in-out;
 }
-
+.lazy-image {
+  filter: blur(6px);
+}
 .product-image:hover {
   transform: scale(1.05);
 }
@@ -184,7 +203,7 @@ html.dark .school-select-wrapper select {
 .app-footer {
   position: sticky;
   bottom: 10px;
-  /* width: 300px; */
+  width: 300px;
   margin: 0 auto;
   border-radius: 35px;
   height: 80px;
